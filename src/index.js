@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Board from "./Board";
+import { observe } from "./Game";
 
-import App from "./App";
+const root = document.getElementById("root");
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  rootElement
+observe(knightPosition =>
+  ReactDOM.render(<Board knightPosition={knightPosition} />, root)
 );
